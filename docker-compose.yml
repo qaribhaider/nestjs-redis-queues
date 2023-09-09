@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: ./
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/usr/src/app
+    command: npm run start:dev
+  redis:
+    container_name: redis
+    image: 'redis:latest'
+    ports:
+      - '6379:6379'
